@@ -1,0 +1,115 @@
+body{
+  margin: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8D5126; /* Fondo oscuro */
+  padding: 10px 20px;
+  font-family: 'Arial', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el logo y el texto */
+}
+
+.logo {
+  width: 65px; /* Tamaño del logo */
+  height: auto;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-menu a:hover {
+  color: #FFD700; /* Dorado para hover */
+}
+
+.navbar-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.navbar-menu .cart-link {
+  font-weight: bold;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 24px;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggle:focus {
+  outline: none;
+}
+
+.navbar-menu.active {
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #8D5126;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex; /* Hace visible el menú */
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none; /* Oculta el menú inicialmente */
+  }
+
+  .navbar-toggle {
+    display: block; /* Muestra el botón hamburguesa */
+  }
+
+  .logo-container {
+    gap: 5px; /* Espacio más reducido en pantallas pequeñas */
+  }
+
+  .logo {
+    width: 40px; /* Logo más pequeño en pantallas pequeñas */
+  }
+
+  .logo-text {
+    font-size: 20px; /* Texto más pequeño */
+  }
+}

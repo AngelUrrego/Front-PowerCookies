@@ -1,0 +1,69 @@
+.products-container {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta el número de columnas según el ancho disponible */
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  background-color: #fff;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra contenido horizontalmente */
+  justify-content: space-between; /* Espacia contenido verticalmente */
+  height: 330px; /* Mantiene el div cuadrado */
+  padding-bottom: 40px;
+}
+
+.product-image {
+  width: 80%; /* Hace que la imagen sea más pequeña dentro del contenedor */
+  height: 150px; /* Ajusta el tamaño de la imagen */
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.product-price {
+  color: #000000;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+button {
+  background-color: #8D5126;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6f3a1e;
+}

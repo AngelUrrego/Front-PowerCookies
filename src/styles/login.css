@@ -1,0 +1,122 @@
+/* Estilo único para el contenedor del login */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center; /* Asegura que los elementos hijos estén centrados */
+  }
+  
+  .login-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para los inputs */
+  .login-input {
+    width: 90%; /* Ajusta el ancho relativo al contenedor */
+    max-width: 300px; /* Máximo ancho para inputs */
+    padding: 10px;
+    margin: 10px auto; /* Centra los inputs horizontalmente */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    display: block; /* Asegura que los inputs se apilen verticalmente */
+  }
+  
+  .login-input:focus {
+    border-color: #8D5126;
+    outline: none;
+  }
+  
+  /* Estilo para el botón */
+  .login-button {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: #8D5126;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block; /* Centra el botón como los inputs */
+    margin: 10px auto; /* Asegura el centrado horizontal */
+  }
+
+  /* Estilo para el enlace de registro */
+.register-text {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .register-link {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .register-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Estilo para el botón de regreso */
+  /* Estilo para el botón de regreso */
+.login-buttons {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Gris claro de fondo */
+    color: #333;               /* Texto en gris oscuro */
+    border: none;    /* Borde gris claro */
+    border-radius: 5px;        /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+  }
+  
+  .login-buttons:hover {
+    background-color: #ddd;    /* Gris intermedio al hacer hover */
+    border-color: #aaa;        /* Borde gris más oscuro en hover */
+  }  
+  
+  .login-button:hover {
+    background-color: #6a3f1c; /* Un color más oscuro para el efecto hover */
+  }
+  
+  /* Estilo para los mensajes */
+  .login-success,
+  .login-error {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .login-logo img {
+    max-width: 100px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  
+  
+  .login-success {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .login-error {
+    color: red;
+    font-weight: bold;
+  }
+  
