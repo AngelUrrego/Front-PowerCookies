@@ -7,6 +7,8 @@ import cookiesFresa from "../images/CookiesFresa.jpg"
 import cookiesMora from "../images/CookiesMora.jpg"
 import cookiesLimon from "../images/CookiesLimon.jpg"
 import cookiesBanano from "../images/CookiesBanano.jpg"
+import Swal from 'sweetalert2';
+
 
 const imageMap = {
   'Galleta de Chocolate': galletaChocolate,
@@ -29,6 +31,20 @@ const Products = () => {
     getProducts();
   }, []);
 
+  const handleAddToCart = (product) => {
+    addToCart(product); // Agrega el producto al carrito
+
+    // Muestra una alerta usando SweetAlert2
+    Swal.fire({
+      title: '¡Producto agregado!',
+      text: `${product.name} se ha agregado al carrito.`,
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+      timer: 2000, // Cierra automáticamente después de 2 segundos
+      timerProgressBar: true,
+    });
+  };
+
   return (
     <div className="products-container">
       <h1>Productos</h1>
@@ -43,7 +59,7 @@ const Products = () => {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p className="product-price">${product.price}</p>
-            <button onClick={() => addToCart(product)}>Agregar al carrito</button>
+            <button onClick={() => handleAddToCart(product)}>Agregar al carrito</button>
           </div>
         ))}
       </div>
