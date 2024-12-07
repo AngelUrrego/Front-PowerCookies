@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Para la redirección
 import { login } from '../services/auth';
 import '../styles/login.css'; // Importa el archivo CSS para aplicar los estilos
 import logo from "../images/Logo.jpeg"
+import Swal from 'sweetalert2';
 
 const Login = ({ setUser }) => {
   const [formData, setFormData] = useState({ email: '', password: '' });
