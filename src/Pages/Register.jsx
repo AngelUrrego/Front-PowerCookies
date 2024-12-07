@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Para redirección
 import { register } from '../services/auth'; // Servicio de registro
 import '../styles/register.css'; // Archivo CSS exclusivo
 import logo from "../images/Logo.jpeg"
+import Swal from 'sweetalert2';
 
 const Register = ({ setUser }) => {
   const [formData, setFormData] = useState({ email: '', password: '', username: '' });
@@ -19,22 +20,50 @@ const Register = ({ setUser }) => {
     try {
       const response = await register(formData);
       console.log('Respuesta del backend:', response);
-
+  
       const { token, user } = response;
-
+  
       localStorage.setItem('token', token);
       setUser(user);
-
-      setSuccessMessage('Registro exitoso. Redirigiendo al inicio de sesión...');
-      setError('');
-
-      setTimeout(() => navigate('/login'), 1000);
+  
+      // Mensaje de éxito con SweetAlert2
+      Swal.fire({
+        title: '¡Registro exitoso!',
+        text: 'Redirigiendo al inicio de sesión...',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        timer: 1500,
+        timerProgressBar: true,
+        showConfirmButton: false,
+      });
+  
+      // Redirigir al login después de 1.5 segundos
+      setTimeout(() => navigate('/login'), 1500);
     } catch (err) {
       console.log('Error al registrar el usuario:', err);
-      setError(err.response ? err.response.data.message : 'Error de red');
-      setSuccessMessage('');
+  
+      // Mostrar mensaje específico si el correo ya existe
+      if (err.response && err.response.status === 409) {
+        Swal.fire({
+          title: 'Correo ya registrado',
+          text: 'El correo proporcionado ya está asociado a una cuenta. Por favor, intenta con otro.',
+          icon: 'warning',
+          confirmButtonColor: '#d33',
+          confirmButtonText: 'Intentar de nuevo',
+        });
+      } else {
+        // Mensaje genérico para otros errores
+        Swal.fire({
+          title: 'Error al registrar',
+          text: err.response ? err.response.data.message : 'Error de red. Intenta de nuevo más tarde.',
+          icon: 'error',
+          confirmButtonColor: '#d33',
+          confirmButtonText: 'Intentar de nuevo',
+        });
+      }
     }
   };
+  
 
   return (
     <div className="register-container">
