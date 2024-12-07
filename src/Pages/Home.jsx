@@ -3,7 +3,7 @@ import '../styles/home.css'
 import cookies from '../images/Cookies.jpg'
 import logo from "../images/Logo.jpeg"
 import cookiesFresa from "../images/CookiesFresa.jpg" 
-import ingredientes from "../images/ingredientes.jpg"
+import ingredientes from "../images/imagen2.jpg"
 
 const Home = () => {
   return (
