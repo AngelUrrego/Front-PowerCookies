@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import logo from '../images/Logo.jpeg'; // Importa la imagen del logo
+import logo from '../images/Logo.jpeg';
+import { FaHome, FaCookieBite, FaInfoCircle, FaShoppingCart, FaUser, FaSignInAlt } from 'react-icons/fa'; // Ejemplo de íconos
 
 const Navbar = ({ user, setUser }) => {
   const { cart } = useCart();
@@ -21,19 +22,37 @@ const Navbar = ({ user, setUser }) => {
         ☰
       </button>
       <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/products" onClick={() => setMenuOpen(false)}>Productos</Link>
-        <Link to="/nutrition" onClick={() => setMenuOpen(false)}>Valor Nutricional</Link>
-        <Link to="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>
+        <Link to="/" onClick={() => setMenuOpen(false)} className="nav-item">
+          <FaHome className="nav-icon" />
+          Home
+        </Link>
+        <Link to="/products" onClick={() => setMenuOpen(false)} className="nav-item">
+          <FaCookieBite className="nav-icon" />
+          Productos
+        </Link>
+        <Link to="/nutrition" onClick={() => setMenuOpen(false)} className="nav-item">
+          <FaInfoCircle className="nav-icon" />
+          Valor Nutricional
+        </Link>
+        <Link to="/cart" onClick={() => setMenuOpen(false)} className="nav-item">
+          <FaShoppingCart className="nav-icon" />
           Carrito ({cart.length})
         </Link>
         {user ? (
-          <button onClick={() => { setUser(null); setMenuOpen(false); }}>Cerrar sesión</button>
+          <button onClick={() => { setUser(null); setMenuOpen(false); }} className="nav-item">
+            <FaUser className="nav-icon" />
+            Cerrar sesión
+          </button>
         ) : (
           <>
-            <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
-            <Link to="/register" onClick={() => setMenuOpen(false)}>Registrarse</Link>
-            
+            <Link to="/login" onClick={() => setMenuOpen(false)} className="nav-item">
+              <FaSignInAlt className="nav-icon" />
+              Login
+            </Link>
+            <Link to="/register" onClick={() => setMenuOpen(false)} className="nav-item">
+              <FaUser className="nav-icon" />
+              Registrarse
+            </Link>
           </>
         )}
       </div>
