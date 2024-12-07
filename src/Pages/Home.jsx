@@ -7,7 +7,7 @@ import cookiesFresa from "../images/CookiesFresa.jpg";
 import ingredientes from "../images/imagen2.jpg";
 
 const Home = () => {
-  const navigate = useNavigate(); // Hook para navegación interna
+  const navigate = useNavigate(); 
 
   return (
     <div className="home-container">
