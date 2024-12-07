@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import logo from '../images/logo.jpeg'; // Importa la imagen del logo
+import logo from '../images/Logo.jpeg'; // Importa la imagen del logo
 
 const Navbar = ({ user, setUser }) => {
   const { cart } = useCart();
