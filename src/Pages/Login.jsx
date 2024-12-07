@@ -19,23 +19,40 @@ const Login = ({ setUser }) => {
     try {
       const response = await login(formData);
       console.log('Respuesta del backend:', response);
-
+  
       const { token, user } = response;
       localStorage.setItem('token', token);
       console.log('Token almacenado:', localStorage.getItem('token'));
-
+  
       setUser(user);
-      setSuccessMessage('Inicio de sesión exitoso. ¡Bienvenido!');
-      setError('');
-
-      // Redirigir al home después de un inicio de sesión exitoso
-      setTimeout(() => navigate('/'), 1000); // Espera 1 segundo antes de redirigir
+  
+      // Mostrar mensaje de éxito con SweetAlert2
+      Swal.fire({
+        title: '¡Inicio de sesión exitoso!',
+        text: '¡Bienvenido a PowerCookies!',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        timer: 1500,
+        timerProgressBar: true,
+        showConfirmButton: false, // Ocultar el botón de confirmación
+      });
+  
+      // Redirigir al home después de un breve retraso
+      setTimeout(() => navigate('/'), 1500);
     } catch (err) {
       console.log('Error al iniciar sesión:', err);
-      setError(err.response ? err.response.data.message : 'Error de red');
-      setSuccessMessage('');
+  
+      // Mostrar mensaje de error con SweetAlert2
+      Swal.fire({
+        title: 'Error al iniciar sesión',
+        text: err.response ? err.response.data.message : 'Error de red',
+        icon: 'error',
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Intentar de nuevo',
+      });
     }
   };
+  
 
   return (
     <div className="login-container">

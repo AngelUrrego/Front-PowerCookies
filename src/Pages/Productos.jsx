@@ -40,6 +40,7 @@ const Products = () => {
       text: `${product.name} se ha agregado al carrito.`,
       icon: 'success',
       confirmButtonText: 'Aceptar',
+       confirmButtonColor: '#8D5126',
       timer: 2000, // Cierra automáticamente después de 2 segundos
       timerProgressBar: true,
     });
