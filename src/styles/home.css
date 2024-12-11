@@ -78,4 +78,24 @@
     height: 200px;
     margin-bottom: 10px;
   }
+  .youtube-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .youtube-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .youtube-logo {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .youtube-logo:hover {
+    transform: scale(1.1);
+  }
   

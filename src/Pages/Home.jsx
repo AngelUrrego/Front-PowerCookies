@@ -5,6 +5,7 @@ import cookies from '../images/Cookies.jpg';
 import logo from "../images/Logo.jpeg";
 import cookiesFresa from "../images/CookiesFresa.jpg";
 import ingredientes from "../images/imagen2.jpg";
+import youtubeLogo from '../images/youtube.png'; // Logo de YouTube
 
 const Home = () => {
   const navigate = useNavigate(); 
@@ -41,6 +42,14 @@ const Home = () => {
             <p>Sin conservantes ni ingredientes artificiales.</p>
           </div>
         </div>
+      </section>
+
+      {/* Nuevo enlace a YouTube */}
+      <section className="youtube-section">
+        <h2>Mira nuestro video en YouTube</h2>
+        <a href="https://www.youtube.com/watch?v=gU5vVN0rI94" target="_blank" rel="noopener noreferrer">
+          <img className="youtube-logo" src={youtubeLogo} alt="YouTube Video" />
+        </a>
       </section>
     </div>
   );
